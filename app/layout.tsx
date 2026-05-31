@@ -1,13 +1,13 @@
 import type { Metadata } from 'next'
-import { Google_Sans_Flex } from 'next/font/google'
+import { Geist } from 'next/font/google'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import './globals.css'
 
-const googleSansFlex = Google_Sans_Flex({
+const GeistFont = Geist({
   subsets: ['latin'],
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
-  variable: '--font-google-sans-flex',
+  variable: '--font-geist',
 })
 
 export const metadata: Metadata = {
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={googleSansFlex.className}>
+      <body className={GeistFont.className}>
         <Navbar />
         {children}
         <Footer />

@@ -67,7 +67,7 @@
     position: absolute;
     width: 0%;
     height: 1px;
-    background: var(--hover-color);
+    background: #FFF;
     left: 0;
     bottom: -4px;
     transition: 0.3s ease;
@@ -76,7 +76,7 @@
 }
 
 .navLink:hover {
-    color: var(--hover-color);
+    color: #dadada;
     transform: scale(.98);
 }
 
