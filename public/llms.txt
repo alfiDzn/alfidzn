@@ -1,0 +1,14 @@
+# alfiDzn
+> Free After Effects project files, presets, and tutorials by Alfi — a motion designer from Indonesia.
+
+## About
+alfiDzn is a free resource hub for motion designers. All assets are compatible with Adobe After Effects and available for free download.
+
+## Catalog
+- /catalog: Browse all After Effects project files and presets
+
+## Tutorials
+- /tutorials: Step-by-step After Effects tutorials
+
+## Contact
+- Creator: Alfi (motion designer, Indonesia)

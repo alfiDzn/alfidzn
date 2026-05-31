@@ -1,0 +1,350 @@
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 3rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    /* Initially transparent */
+    background: transparent;
+    border-bottom: 1px solid transparent;
+    backdrop-filter: blur(0px);
+
+    /* Premium smooth transitions */
+    transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        backdrop-filter 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        padding 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav.scrolled {
+    background: rgba(13, 13, 13, 0.75);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px);
+    padding: 0.75rem 3rem;
+    /* slightly more compact on scroll */
+}
+
+.navContent {
+    max-width: 1360px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navLogo {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.navTitle {
+    color: #fff;
+    font-weight: 300;
+    font-size: 1.3rem;
+}
+
+.navLinks {
+    display: flex;
+    gap: 2rem;
+}
+
+.navLink {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.navLink::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    background: var(--hover-color);
+    left: 0;
+    bottom: -4px;
+    transition: 0.3s ease;
+    margin-left: 50%;
+    margin-right: 50%;
+}
+
+.navLink:hover {
+    color: var(--hover-color);
+    transform: scale(.98);
+}
+
+.navLink:hover::after {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.navContact {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-primary);
+    transition: .3s ease;
+}
+
+.navContact:hover {
+    color: var(--hover-color);
+    cursor: pointer;
+}
+
+.navContactLink {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    font-size: 1rem;
+    color: #ffffff;
+    transition: .3s ease;
+    border: 1px solid #ffb0b09f;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5rem;
+    background: #ffb0b042;
+}
+
+.navContactLink:hover {
+    color: #ffb0b0;
+    box-shadow: 0 0 15px #ffbbbb99;
+    transform: scale(.95);
+    border: 1px solid #ffcfcf;
+}
+
+.menuBar {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 10px;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+}
+
+.menuIcon {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.list {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    transition: .3s ease-in-out;
+}
+
+.list:nth-child(1) {
+    top: 0;
+}
+
+.list:nth-child(2) {
+    top: 8px;
+}
+
+.list:nth-child(3) {
+    top: 16px;
+}
+
+.list.active:nth-child(1) {
+    transform: rotate(45deg);
+    top: 8px;
+}
+
+.list.active:nth-child(2) {
+    transform: scaleY(0);
+}
+
+.list.active:nth-child(3) {
+    transform: rotate(-45deg);
+    top: 8px;
+}
+
+.mobileNav {
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 600px;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: -1;
+    backdrop-filter: blur(10px);
+    gap: 2rem;
+
+}
+
+.mobileNav.active {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    animation: fadeUp .5s ease forwards;
+}
+
+@keyframes fadeUp {
+    0% {
+        transform: translateY(-110px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 968px) {
+    .menuBar {
+        display: flex;
+    }
+
+    .nav {
+        z-index: 1000;
+    }
+
+    .navContent {
+        max-width: 330px;
+        justify-content: center;
+    }
+
+    .navLinks {
+        display: none;
+    }
+
+    .navContact {
+        display: none;
+    }
+
+    .navLinks {
+        display: none;
+        gap: 2rem;
+    }
+
+    .navLinks2 {
+
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+
+
+    .navLink2 {
+        color: var(--text-primary);
+        text-decoration: none;
+        font-size: 2rem;
+        position: relative;
+        transition: color 0.3s ease;
+        animation: linkSlide .5s ease forwards;
+        opacity: 0;
+    }
+
+    .navLink2:nth-child(1) {
+        animation-delay: .1s;
+    }
+
+    .navLink2:nth-child(2) {
+        animation-delay: .2s;
+    }
+
+    .navLink2:nth-child(3) {
+        animation-delay: .3s;
+    }
+
+    @keyframes linkSlide {
+        0% {
+            transform: translateX(-20px);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    .navLink2::after {
+        content: '';
+        position: absolute;
+        width: 0%;
+        height: 1px;
+        background: var(--hover-color);
+        left: 0;
+        bottom: -4px;
+        transition: 0.3s ease;
+        margin-left: 50%;
+        margin-right: 50%;
+    }
+
+    .navLink2:hover {
+        color: var(--hover-color);
+        transform: scale(.98);
+    }
+
+    .navLink2:hover::after {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .navContact2 {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--text-primary);
+        transition: .3s ease;
+        opacity: 0;
+        animation: contactSlide .5s ease forwards;
+        animation-delay: .4s;
+    }
+
+    @keyframes contactSlide {
+        0% {
+            transform: translateY(-20px);
+            opacity: 0;
+        }
+
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .navContact2:hover {
+        color: var(--hover-color);
+        cursor: pointer;
+    }
+
+    .navContactLink2 {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        text-decoration: none;
+        font-size: 2rem;
+        color: #000;
+        transition: .3s ease;
+        border: 1px solid #ffffff;
+        padding: 0.5rem 1.5rem;
+        border-radius: 5rem;
+        background: #fff;
+    }
+
+    .navContactLink2:hover {
+        color: #000;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+        transform: scale(.95);
+    }
+}

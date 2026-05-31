@@ -1,0 +1,212 @@
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 85vh;
+    padding: 0 1rem;
+}
+
+.title {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 400;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -2px;
+}
+
+.accent {
+    background: linear-gradient(90deg, #8f4eda, #f189ff, #f1c753);
+    /* use the unprefixed version first; build tools like Autoprefixer
+     will add vendor prefixes for us if you have them configured */
+    background-clip: text;
+    /* Chrome/Safari still need the prefixed form – kept for runtime support */
+    -webkit-background-clip: text;
+    /* vendor prefix, will trigger a warning */
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    padding: 0.2rem 0.5rem;
+}
+
+.accent::before {
+    content: '';
+    position: absolute;
+    top: 7px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../public/boxes.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: scale(1.4);
+    opacity: 1;
+    z-index: -1;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #a0a0a0;
+    max-width: 600px;
+    margin-bottom: 2.5rem;
+}
+
+.ctaGroup {
+    display: flex;
+    gap: 1rem;
+}
+
+.primaryBtn {
+    background-color: #fff;
+    color: #000;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.primaryBtn:hover {
+    transform: scale(.95);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+}
+
+.secondaryBtn {
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid #333;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.secondaryBtn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.assetGrid {
+    display: grid;
+    /* Membuat 3 kolom otomatis yang responsif */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 4rem 0;
+}
+
+.futureBtn {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+    gap: .5rem;
+}
+
+.thirdBtn {
+    color: #b9b9b9;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    position: relative;
+    transition: 0.3s;
+}
+
+.thirdBtn:hover {
+    color: #fff;
+    transform: scale(.95);
+}
+
+.thirdBtn::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 8px;
+    transition: .3s ease;
+    margin-left: 50%;
+    margin-right: 50%;
+}
+
+.thirdBtn::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 50%;
+    transition: .3s ease;
+    margin-left: 50%;
+    margin-right: 50%;
+}
+
+.thirdBtn:hover::after {
+    margin-left: 0%;
+    margin-right: 0%;
+    width: 100%;
+}
+
+.thirdBtn:hover::before {
+    margin-left: 0%;
+    margin-right: 0%;
+    width: 100%;
+}
+
+.aboutSection {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 4rem 1rem 2rem;
+    text-align: center;
+    color: #a0a0a0;
+    font-size: 1rem;
+    line-height: 1.8;
+    border-top: 1px solid #222;
+}
+
+.aboutSection strong {
+    color: #fff;
+}
+
+.faqSection {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 2rem 1rem 6rem;
+}
+
+.faqSection h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: #fff;
+
+}
+
+.faqItem {
+    border-top: 1px solid #222;
+    padding: 1.5rem 0;
+}
+
+.faqItem h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.75rem;
+    background: #1b1b1b;
+    width: fit-content;
+    padding: 10px 15px;
+    border-radius: 15px;
+    border: 1px solid #ffffff1e;
+}
+
+.faqItem p {
+    font-size: 0.95rem;
+    color: #a0a0a0;
+    line-height: 1.7;
+}
